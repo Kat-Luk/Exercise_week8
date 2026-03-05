@@ -52,8 +52,13 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(result);
     }
     public void divide(View view){
-        int result = parseInt(inputFirstNumber.getText().toString()) / parseInt(inputSecondNumber.getText().toString());
-        resultOutput.setText(String.valueOf(result));
-        System.out.println(result);
+        try {
+            int result = parseInt(inputFirstNumber.getText().toString()) / parseInt(inputSecondNumber.getText().toString());
+            resultOutput.setText(String.valueOf(result));
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            resultOutput.setText("Math ERROR");
+        }
+
     }
 }
